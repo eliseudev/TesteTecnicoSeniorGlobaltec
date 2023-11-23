@@ -1,9 +1,11 @@
 ﻿using Globaltec.Domain.Models;
 using Globaltec.Servico.Servicos.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Globaltec.API.Controllers
 {
+    [Authorize]
     public class PersonController : Controller
     {
         private readonly IPersonService _personService;

@@ -1,5 +1,6 @@
 ﻿using Globaltec.Domain.Models;
 using Globaltec.Servico.Servicos.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Globaltec.API.Controllers
@@ -22,6 +23,7 @@ namespace Globaltec.API.Controllers
             return StatusCode(responseRequest.CodHTTP, responseRequest.Result);
         }
 
+        [Authorize]
         [HttpPost("CriarUsuario")]
         [ProducesResponseType(typeof(Users), 201)]
         [ProducesResponseType(typeof(string), 409)]
